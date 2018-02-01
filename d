@@ -8,11 +8,49 @@ fi
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
-MYIP=$(curl -4 icanhazip.com)
-if [ $MYIP = "" ]; then
-   MYIP=`ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1`;
+
+MYIP=$(ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1)
+if [ "$MYIP" = "" ]; then
+	MYIP=$(wget -qO- ipv4.icanhazip.com)
 fi
 MYIP2="s/xxxxxxxxx/$MYIP/g";
+MYIP3="s/xxxxxxxxx:443/$MYIP:443/g";
+ether=`ifconfig | cut -c 1-8 | sort | uniq -u | grep venet0 | grep -v venet0:`
+if [[ $ether = "" ]]; then
+        ether=eth0
+fi
+
+	source="http://borneobesthosting.me/autoscript"
+
+# Install lolcat
+apt-get install ruby -y
+apt-get install unzip
+wget $source/lolcat-master.zip
+gem install lolcat
+cd
+rm -r lolcat-master
+rm master.zip
+clear
+clear
+# check registered ip
+wget -q -O IP $source/Debian7/IP.txt
+if ! grep -w -q $MYIP IP; then
+	echo "THANK YOU For choice Us!! Price: RM20.00 = 1IP !" | lolcat          
+echo "  ===================================================================="| lolcat
+echo "  # 	                  â˜â˜ Contact Me â˜â˜                     #"| lolcat
+echo "  #            TELEGRAM  :  https://t.me/orangkuatsabahanterkini     #"| lolcat
+echo "  #            WEBSITE.  :  http://www.borneobesthosting.me          #"| lolcat
+echo "  #            CHANNEL   : @NewPremiumService                        #"| lolcat
+echo "  #             EMAIL     : sales@borneobesthosting.me               #"| lolcat
+echo "  #------------------------------------------------------------------#"| lolcat
+echo "                  â˜†â˜† Autoscript By Borneobesthosting   â˜†â˜†          " | lolcat
+echo "  ===================================================================="| lolcat
+echo " Maaf, hanya IP yang berdaftar boleh menggunakan script ini!" | lolcat
+	rm /root/IP
+	rm -f /root/IP
+	exit
+ 
+fi
 
 # go to root
 cd
