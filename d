@@ -1,10 +1,5 @@
 #!/bin/sh
 
-#Requirement
-if [ ! -e /usr/bin/curl ]; then
-    apt-get -y update && apt-get -y upgrade
-	apt-get -y install curl
-fi
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
@@ -37,13 +32,13 @@ wget -q -O IP $source/Debian7/IP.txt
 if ! grep -w -q $MYIP IP; then
 	echo "THANK YOU For choice Us!! Price: RM20.00 = 1IP !" | lolcat          
 echo "  ===================================================================="| lolcat
-echo "  # 	                  â˜â˜ Contact Me â˜â˜                     #"| lolcat
+echo "  # 	                  √ Contact Me √                           # | lolcat
 echo "  #            TELEGRAM  :  https://t.me/orangkuatsabahanterkini     #"| lolcat
 echo "  #            WEBSITE.  :  http://www.borneobesthosting.me          #"| lolcat
 echo "  #            CHANNEL   : @NewPremiumService                        #"| lolcat
 echo "  #             EMAIL     : sales@borneobesthosting.me               #"| lolcat
 echo "  #------------------------------------------------------------------#"| lolcat
-echo "                  â˜†â˜† Autoscript By Borneobesthosting   â˜†â˜†          " | lolcat
+echo "  ############## Autoscript By Borneobesthosting ####################" | lolcat
 echo "  ===================================================================="| lolcat
 echo " Maaf, hanya IP yang berdaftar boleh menggunakan script ini!" | lolcat
 	rm /root/IP
@@ -55,6 +50,11 @@ fi
 # go to root
 cd
 
+#Requirement
+if [ ! -e /usr/bin/curl ]; then
+    apt-get -y update && apt-get -y upgrade
+	apt-get -y install curl
+fi
 # disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
