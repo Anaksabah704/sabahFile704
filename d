@@ -17,31 +17,22 @@ fi
 
 	source="http://borneobesthosting.me/autoscript"
 
-# Install lolcat
-apt-get install ruby -y
-apt-get install unzip
-wget $source/lolcat-master.zip
-gem install lolcat
-cd
-rm -r lolcat-master
-rm master.zip
-clear
 clear
 # check registered ip
 wget -q -O IP $source/Debian7/IP.txt
 if ! grep -w -q $MYIP IP; then
-echo "  ===================================================================="| lolcat
-echo "  ################ Autoscript By Borneobesthosting ###################" | lolcat        
-echo ". #===================================================================="| lolcat
-echo "  # 	                       √ CONTACT ME √                     #"| lolcat
-echo "  #            TELEGRAM  :  https://t.me/orangkuatsabahanterkini     #"| lolcat
-echo "  #            WEBSITE.  :  http://www.borneobesthosting.me          #"| lolcat
-echo "  #            CHANNEL   : @NewPremiumService                        #"| lolcat
-echo "  #             EMAIL    : sales@borneobesthosting.me                #"| lolcat
-echo "  #----------------------------------------------------------------- # " | lolcat
-echo "  ################ Autoscript By Borneobesthosting ###################" | lolcat
-echo "  ===================================================================="| lolcat
-echo " Maaf, hanya IP yang berdaftar boleh menggunakan script ini!" | lolcat
+echo "  ====================================================================" 
+echo "  ################ Autoscript By Borneobesthosting ###################"   
+echo ". #===================================================================="
+echo "  # 	                       √ CONTACT ME √                     #" 
+echo "  #            TELEGRAM  :  https://t.me/orangkuatsabahanterkini     #" 
+echo "  #            WEBSITE.  :  http://www.borneobesthosting.me          #"
+echo "  #            CHANNEL   : @NewPremiumService                        #"
+echo "  #             EMAIL    : sales@borneobesthosting.me                #"
+echo "  #----------------------------------------------------------------- # " 
+echo "  ################ Autoscript By Borneobesthosting ###################" 
+echo "  ===================================================================="
+echo " Maaf, hanya IP yang berdaftar boleh menggunakan script inii"
 	rm /root/IP
 	rm -f /root/IP
 	exit
