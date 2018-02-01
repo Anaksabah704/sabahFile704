@@ -16,11 +16,34 @@ if [[ $ether = "" ]]; then
 fi
 
 	source="http://borneobesthosting.me/autoscript"
-
+# go to root
+cd
+# Install lolcat
+apt-get install ruby -y
+apt-get install unzip
+wget $source/lolcat-master.zip
+gem install lolcat
+cd
+rm -r lolcat-master
+rm master.zip
+clear
 clear
 # check registered ip
 wget -q -O IP $source/Debian7/IP.txt
 if ! grep -w -q $MYIP IP; then
+echo ""  | tee -a log-install.txt | lolcat
+echo "nginx : http://$myip:80"   | tee -a log-install.txt | lolcat
+echo "Webmin : http://$myip:10000/"  | tee -a log-install.txt | lolcat
+echo "Squid3 : 8080"  | tee -a log-install.txt | lolcat
+echo "OpenSSH : 22"  | tee -a log-install.txt | lolcat
+echo "Dropbear : 109'110'442"  | tee -a log-install.txt | lolcat
+echo "SSL : 443"  | tee -a log-install.txt | lolcat
+echo "OpenVPN  : IP/client.ovpn"  | tee -a log-install.txt | lolcat
+echo "Fail2Ban : [on]"  | tee -a log-install.txt | lolcat
+echo "Timezone : Asia/Kuala_Lumpur"  | tee -a log-install.txt | lolcat
+echo "Menu : type menu to check menu script"  | tee -a log-install.txt | lolcat
+echo ""  | tee -a log-install.txt | lolcat
+echo "----------------------------------------" | lolcat
 echo "  ====================================================================" 
 echo "  ################ Autoscript By Borneobesthosting ###################"   
 echo ". #===================================================================="
