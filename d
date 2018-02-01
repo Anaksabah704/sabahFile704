@@ -32,13 +32,13 @@ wget -q -O IP $source/Debian7/IP.txt
 if ! grep -w -q $MYIP IP; then
 	echo "THANK YOU For choice Us!! Price: RM20.00 = 1IP !" | lolcat          
 echo ". #===================================================================="| lolcat
-echo "  # 	                       √ Contact Me√                       #"| lolcat
+echo "  # 	                       √ CONTACT ME √                     #"| lolcat
 echo "  #            TELEGRAM  :  https://t.me/orangkuatsabahanterkini     #"| lolcat
 echo "  #            WEBSITE.  :  http://www.borneobesthosting.me          #"| lolcat
 echo "  #            CHANNEL   : @NewPremiumService                        #"| lolcat
-echo "  #             EMAIL     : sales@borneobesthosting.me               #"| lolcat
+echo "  #             EMAIL    : sales@borneobesthosting.me                #"| lolcat
 echo "  #------------------------------------------------------------------#"| lolcat
-echo "  ############## Autoscript By Borneobesthosting ####################" | lolcat
+echo "  ################ Autoscript By Borneobesthosting ###################" | lolcat
 echo "  ===================================================================="| lolcat
 echo " Maaf, hanya IP yang berdaftar boleh menggunakan script ini!" | lolcat
 	rm /root/IP
