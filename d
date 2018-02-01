@@ -38,7 +38,7 @@ echo "  #            TELEGRAM  :  https://t.me/orangkuatsabahanterkini     #"| l
 echo "  #            WEBSITE.  :  http://www.borneobesthosting.me          #"| lolcat
 echo "  #            CHANNEL   : @NewPremiumService                        #"| lolcat
 echo "  #             EMAIL    : sales@borneobesthosting.me                #"| lolcat
-echo "  #--------------------------------------------------------------| lolcat
+echo "  #----------------------------------------------------------------- # " | lolcat
 echo "  ################ Autoscript By Borneobesthosting ###################" | lolcat
 echo "  ===================================================================="| lolcat
 echo " Maaf, hanya IP yang berdaftar boleh menggunakan script ini!" | lolcat
