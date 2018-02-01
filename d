@@ -31,8 +31,8 @@ clear
 wget -q -O IP $source/Debian7/IP.txt
 if ! grep -w -q $MYIP IP; then
 	echo "THANK YOU For choice Us!! Price: RM20.00 = 1IP !" | lolcat          
-echo "  ===================================================================="| lolcat
-echo "  # 	                  √ Contact Me √                           # | lolcat
+===================================================================="| lolcat
+echo "  # 	                     √ Contact Me√                   #"| lolcat
 echo "  #            TELEGRAM  :  https://t.me/orangkuatsabahanterkini     #"| lolcat
 echo "  #            WEBSITE.  :  http://www.borneobesthosting.me          #"| lolcat
 echo "  #            CHANNEL   : @NewPremiumService                        #"| lolcat
