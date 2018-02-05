@@ -75,13 +75,45 @@ apt-get update;apt-get -y upgrade;
 
 # install webserver
 apt-get -y install nginx php5-fpm php5-cli
-apt-get -y install zip tar
 
 # install essential package
 echo "mrtg mrtg/conf_mods boolean true" | debconf-set-selections
-#apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter
-apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter
+apt-get -y install bmon 
+apt-get -y install iftop 
+apt-get -y install htop 
+apt-get -y install nmap 
+apt-get -y install axel 
+apt-get -y install nano 
+apt-get -y install iptables 
+apt-get -y install traceroute 
+apt-get -y install sysv-rc-conf 
+apt-get -y install dnsutils 
+apt-get -y install bc 
+apt-get -y install nethogs
+apt-get -y install openvpn 
+apt-get -y install vnstat 
+apt-get -y install less 
+apt-get -y install screen 
+apt-get -y install psmisc 
+apt-get -y install apt-file 
+apt-get -y install whois 
+apt-get -y install ptunnel 
+apt-get -y install ngrep 
+apt-get -y install mtr 
+apt-get -y install git 
+apt-get -y install zsh 
+apt-get -y install mrtg 
+apt-get -y install snmp 
+apt-get -y install snmpd 
+apt-get -y install snmp-mibs-downloader 
+apt-get -y install unzip 
+apt-get -y install unrar 
+apt-get -y install rsyslog 
+apt-get -y install debsums 
+apt-get -y install rkhunter
 apt-get -y install build-essential
+apt-get -y --force-yes -f install libxml-parser-perl
+
 
 # disable exim
 service exim4 stop
@@ -92,15 +124,15 @@ apt-file update
 
 # setting vnstat
 vnstat -u -i $ether
+vnstat -i $ether
 service vnstat restart
 
-# install screenfetch
-cd
-#wget $source/debian7/screenfetch-dev
-#mv screenfetch-dev /usr/bin/screenfetch
-#chmod +x /usr/bin/screenfetch
-#echo "clear" >> .profile
-#echo "screenfetch" >> .profile
+# install neofetch
+echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
+curl -L "https://bintray.com/user/downloadSubjectPublicKey?username=bintray" -o Release-neofetch.key && sudo apt-key add Release-neofetch.key && rm Release-neofetch.key
+apt-get update
+apt-get install neofetch
+
 
 #text gambar
 apt-get install boxes
